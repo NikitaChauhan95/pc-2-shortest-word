@@ -3,18 +3,19 @@ package com.jap;
 
 public class ShortestWord {
     public static void main(String[] args) {
-
-        //Declare and initialize a String array.
-
-        // Create an object of the class ShortestWord
-
-        //Call the method findShortestWord() and pass the array.
+        String[] words = {"Java", "Programming", "Language"};
+        ShortestWord shortestWord = new ShortestWord();
+        String word = shortestWord.findShortestWord(words);
+        System.out.println(word);
     }
 
-    //Write the logic to find the shortest word from the String array inside
-    // the below method and return the shortest word.
     public String findShortestWord(String[] words) {
-
-        return "";
+        String shortest = words[0];
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() <= shortest.length()) {
+                shortest = words[i];
+            }
+        }
+        return shortest;
     }
 }
